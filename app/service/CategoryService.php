@@ -1,6 +1,5 @@
 <?php
 
-namespace service;
 require_once ROOT_PATH.'/models/Category.php';
 require_once ROOT_PATH.'/config/ConnectDatabase.php';
 

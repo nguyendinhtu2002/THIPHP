@@ -79,26 +79,25 @@ public static function getALL(){
             $database = new ConnectDatabase();
             $pdo = $database->getConnection();
             if($pdo!=null){
-                $title = trim($_POST['title']);
-                $content = trim($_POST['content']);
-                $summary = trim($_POST['summary']);
+                $name = trim($_POST['name']);
+                $description = trim($_POST['description']);
+                $price = trim($_POST['price']);
+                $status = trim($_POST['status']);
                 $category_id = trim($_POST['category_id']);
-                $member_id = trim($_POST['member_id']);
-                $published = trim($_POST['published']);
-                if (empty($title) || empty($summary) || empty($content) || empty($category_id)||empty($member_id)||empty($published)) {
+                $image = trim($_POST['image_url']);
+                if (empty($name) || empty($description) || empty($price) || empty($status)||empty($category_id)||empty($image)) {
                     echo "<script>alert('Please enter all required fields');</script>";
-
                     return;
                 }
-                $sql = "UPDATE product SET title = :title, content = :content,summary= :summary,category_id = :category_id, member_id = :member_id, published = :published WHERE id = :id";
+                $sql = "UPDATE product SET name = :name, description = :description,price= :price,status = :status, category_id = :category_id, image_url = :image WHERE id = :id";
                 $stmt = $pdo->prepare($sql);
 
-                $stmt->bindParam(':title', $title);
-                $stmt->bindParam(':content', $content);
+                $stmt->bindParam(':name', $name);
+                $stmt->bindParam(':description', $description);
+                $stmt->bindParam(':price', $price);
+                $stmt->bindParam(':status', $status);
                 $stmt->bindParam(':category_id', $category_id);
-                $stmt->bindParam(':summary', $summary);
-                $stmt->bindParam(':member_id', $member_id);
-                $stmt->bindParam(':published', $published);
+                $stmt->bindParam(':image_url', $image);
                 $stmt->bindParam(':id', $id);
                 if ($stmt->execute()) {
                     echo "<script>alert('Article updated successfully.');</script>";

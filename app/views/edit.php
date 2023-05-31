@@ -41,17 +41,18 @@
                     <div class="row">
                         <div class="col">
                             <label for="name" class="fw-bold form-label">Tên sản phẩm*</label>
-                            <input class="form-control" type="text" id="name" placeholder="Nhập tên sản phẩm">
+                            <input class="form-control" type="text" id="name" placeholder="Nhập tên sản phẩm" value="<?php echo $products[0]->getName(); ?>">
                         </div>
                         <div class="col">
                             <label for="name" class="fw-bold form-label">Danh mục sản phẩm*</label>
                             <div class="d-flex position-relative">
                                 <select name="" id="" class="form-control">
-                                    <option disabled selected value="">None</option>
-                                    <option value="">Áo Nam</option>
-
+                                    <!-- <option disabled selected value="">None</option>
+                                    <option value="">Áo Nam</option> -->
+                                    <option value="1" <?php if (  $categorys[0]->getId() == 1) echo "selected"; ?>>Áo sơ mi nam</option>
+                                    <option value="5" <?php if ( $categorys[0]->getId() == 5) echo "selected"; ?>>Áo sơ mi nữ</option>
                                 </select>
-                                <div class="position-absolute p-1" style="right: 3px; top: 3px; background-color: slategray"><i class="bi bi-chevron-down"></i>
+                                <div class="position-absolute p-1" style="right: 3px; top: 3px; background-color:` slategray"><i class="bi bi-chevron-down"></i>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +60,7 @@
                     <div class="row">
                         <div class="col">
                             <label for="name" class="fw-bold form-label">Giá sản phẩm*</label>
-                            <input class="form-control" type="text" id="name" placeholder="Nhập tên sản phẩm">
+                            <input class="form-control" type="text" id="name" placeholder="Nhập tên sản phẩm" value="<?php echo $products[0]->getPrice(); ?>">
                         </div>
                         <div class="col">
                             <label for="name" class="fw-bold form-label">Trạng thái sản phẩm</label>
