@@ -31,48 +31,84 @@
             </ul>
         </div>
         <div class="col-10">
+<!--            <ul class="list-group">-->
+<!---->
+<!--            </ul>-->
             <ul class="list-group">
                 <li class="list-group-item bg-danger">
                     <a class="text-decoration-none text-white">
                         Danh sách sản phẩm
                     </a></li>
-            </ul>
-            <table class="table border">
-                <thead>
-                <tr>
-                    <th class="" scope="col">STT</th>
-                    <th class="" colspan="2">Ảnh</th>
-                    <th class="" colspan="2">Tên sản phẩm</th>
-                    <th class="">Giá</th>
-                    <th class="">Trạng thái</th>
-                    <th class=""></th>
-
-                </tr>
-                </thead>
-                <tbody>
+                <li class="list-group-item d-flex">
+                    <div class="col-1">STT</div>
+                    <div class="col" >Ảnh</div>
+                    <div class="col" >Tên sản phẩm</div>
+                    <div class="col" >Giá</div>
+                    <div class="col">Trạng thái</div>
+                    <div class="col"></div>
+                </li>
                 <?php foreach ($products as $product) { ?>
-                    <tr>
-                        <th scope="row"><?php echo $product->getId(); ?></th>
-                        <td colspan="2"><img src="<?php echo $product->getImageUrl(); ?>" style="width: 10%;height: 10%" alt="Product Image"></td>
-                        <td colspan="2"><?php echo $product->getName(); ?></td>
-                        <td><?php echo $product->getPrice(); ?></td>
-                        <td><?php echo $product->getStatus(); ?></td>
-                        <td class="d-flex gap-3">
+                    <li class="list-group-item d-flex">
+                        <div class="col-1"><?php echo $product->getId(); ?></div>
+                        <div class="col" style="width: 100px; height: 100px">
+                            <img class=" d-flex" style=" min-width: 100px; max-height: 100px;" src="<?php echo $product->getImageUrl(); ?>" alt="Product Image">
+                        </div>
+                        <div class="col" ><?php echo $product->getName(); ?></div>
+                        <div class="col" ><?php echo $product->getPrice(); ?></div>
+                        <div class="col" ><?php echo $product->getStatus(); ?></div>
+                        <div class="col d-flex gap-3">
                             <div>
                                 <a href="<?php echo BASE_PATH ?>/edit/<?php echo $product->getId() ?>" class="btn btn-primary">Sửa</a>
                             </div>
                             <div>
-                                <form  method="POST">
+                                <form action="" method="post">
                                     <input name="id" type="text" hidden value="<?php echo $product->getId(); ?>">
                                     <button type="submit" class="btn btn-danger" onclick="(confirm('Bạn có chắc muốn xóa?'))" >Xóa</button>
                                 </form>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </li>
+
                 <?php } ?>
 
-                </tbody>
-            </table>
+            </ul>
+
+<!--            <table class="table border">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th class="" scope="col">STT</th>-->
+<!--                    <th class="" colspan="2">Ảnh</th>-->
+<!--                    <th class="" colspan="2">Tên sản phẩm</th>-->
+<!--                    <th class="">Giá</th>-->
+<!--                    <th class="">Trạng thái</th>-->
+<!--                    <th class=""></th>-->
+<!---->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                --><?php //foreach ($products as $product) { ?>
+<!--                    <tr>-->
+<!--                        <th scope="row">--><?php //echo $product->getId(); ?><!--</th>-->
+<!--                        <td colspan="2"><img src="--><?php //echo $product->getImageUrl(); ?><!--" style="width: 10%;height: 10%" alt="Product Image"></td>-->
+<!--                        <td colspan="2">--><?php //echo $product->getName(); ?><!--</td>-->
+<!--                        <td>--><?php //echo $product->getPrice(); ?><!--</td>-->
+<!--                        <td>--><?php //echo $product->getStatus(); ?><!--</td>-->
+<!--                        <td class="d-flex gap-3">-->
+<!--                            <div>-->
+<!--                                <a href="--><?php //echo BASE_PATH ?><!--/edit/--><?php //echo $product->getId() ?><!--" class="btn btn-primary">Sửa</a>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <form  method="POST">-->
+<!--                                    <input name="id" type="text" hidden value="--><?php //echo $product->getId(); ?><!--">-->
+<!--                                    <button type="submit" class="btn btn-danger" onclick="(confirm('Bạn có chắc muốn xóa?'))" >Xóa</button>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                --><?php //} ?>
+<!---->
+<!--                </tbody>-->
+<!--            </table>-->
 
         </div>
     </div>
