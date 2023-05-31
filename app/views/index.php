@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Home</title>
+
 </head>
+
 <body>
 <div class="container">
     <h1 class="text-center bg-danger text-white text-uppercase py-4 mt-1">Cửa hàng quần áo thời trang Bò Sữa</h1>
@@ -60,9 +62,9 @@
                                 <a href="" class="btn btn-primary">Sửa</a>
                             </div>
                             <div>
-                                <form action="" method="post">
+                                <form  method="POST">
                                     <input name="id" type="text" hidden value="<?php echo $product->getId(); ?>">
-                                    <button class="btn btn-danger" onclick="(confirm('Bạn có chắc muốn xóa?'))">Xóa</button>
+                                    <button type="submit" class="btn btn-danger" onclick="(confirm('Bạn có chắc muốn xóa?'))" >Xóa</button>
                                 </form>
                             </div>
                         </td>

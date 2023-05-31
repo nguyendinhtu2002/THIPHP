@@ -53,6 +53,7 @@ public static function getALL(){
         $router = new Router();
         $id = $router->extractIdFromUrl($_SERVER['REQUEST_URI']);
         try {
+            $id = trim($_POST['id']);
             $database = new ConnectDatabase();
             $pdo = $database->getConnection();
             $sql = "DELETE FROM product WHERE id = :id";
@@ -61,9 +62,10 @@ public static function getALL(){
             $stmt->bindParam(':id', $id);
 
             if ($stmt->execute()) {
-                echo "<script>alert('Article delete successfully.');</script>";
+                echo "<script>alert('PRODUCT delete successfully.');</script>";
+                header("Location: /" .BASE_PATH);
             } else {
-                $errorMessage = "Error inserting article: " . $stmt->errorInfo()[2];
+                $errorMessage = "Error delete product: " . $stmt->errorInfo()[2];
                 echo "<script>alert('$errorMessage');</script>";
             }
         }catch (ErrorException $e){
