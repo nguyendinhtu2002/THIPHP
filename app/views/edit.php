@@ -51,7 +51,9 @@
                                     <option value="">Áo Nam</option>
 
                                 </select>
-                                <div class="position-absolute p-1" style="right: 3px; top: 3px; background-color: slategray"><i class="bi bi-chevron-down"></i>
+                                <div class="position-absolute p-1"
+                                     style="right: 3px; top: 3px; background-color: slategray"><i
+                                            class="bi bi-chevron-down"></i>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +86,12 @@
 
                         </div>
                     </div>
-
+                    <div class="mt-3">
+                        <div class="col d-flex justify-content-center mx-auto ">
+                            <button class="btn btn-warning mx-auto px-4">Sửa</button>
+                        </div>
+                        <div class="col"></div>
+                    </div>
                 </form>
             </div>
         </div>
