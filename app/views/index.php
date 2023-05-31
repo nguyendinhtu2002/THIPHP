@@ -59,7 +59,7 @@
                         <td><?php echo $product->getStatus(); ?></td>
                         <td class="d-flex gap-3">
                             <div>
-                                <a href="" class="btn btn-primary">Sửa</a>
+                                <a href="<?php echo BASE_PATH ?>/edit/<?php echo $product->getId() ?>" class="btn btn-primary">Sửa</a>
                             </div>
                             <div>
                                 <form  method="POST">

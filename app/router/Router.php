@@ -29,7 +29,6 @@ class Router
         $url = $_SERVER['REQUEST_URI'];
         $method = $_SERVER['REQUEST_METHOD'];
 //        echo $url;
-            var_dump($this->routes);
         if (isset($this->routes[$method])) {
             foreach ($this->routes[$method] as $route => $controllerAction) {
                 if ($this->isUrlMatch($url, $route)) {
@@ -44,6 +43,7 @@ class Router
     protected function isUrlMatch($url, $route)
     {
         $pattern = preg_replace('/\/{(\w+)}/', '/([^\/]+)', $route);
+
         return preg_match("#^$pattern$#", $url);
     }
 

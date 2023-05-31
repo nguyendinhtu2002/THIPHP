@@ -12,10 +12,11 @@ class HomeController
 
     public  function getDetails(){
         $products = ProductService::getDetails();
-        include(ROOT_PATH.'/views/index.php');
+        include(ROOT_PATH.'/views/edit.php');
     }
     public  function delete(){
         $products = ProductService::deleteArticle();
         include(ROOT_PATH.'/views/index.php');
     }
+
 }
