@@ -1,6 +1,6 @@
 <?php
 
-require_once ROOT_PATH.'/controllers/ArticleController.php';
+require_once ROOT_PATH.'/controllers/HomeController.php';
 
 // router/Router.php
 
@@ -28,7 +28,6 @@ class Router
         $url = $_SERVER['REQUEST_URI'];
         $method = $_SERVER['REQUEST_METHOD'];
 //        echo $url;
-        //    var_dump($this->routes);
         if (isset($this->routes[$method])) {
             foreach ($this->routes[$method] as $route => $controllerAction) {
                 if ($this->isUrlMatch($url, $route)) {
@@ -49,7 +48,6 @@ class Router
     protected function callControllerAction($controllerAction)
     {
         list($controller, $action) = explode('@', $controllerAction);
-
         $controllerObj = new $controller();
 
         $id = $this->extractIdFromUrl($_SERVER['REQUEST_URI']);
