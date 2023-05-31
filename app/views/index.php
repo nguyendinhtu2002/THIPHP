@@ -43,13 +43,15 @@
                     <th class="" colspan="2">Tên sản phẩm</th>
                     <th class="">Giá</th>
                     <th class="">Trạng thái</th>
+                    <th class=""></th>
+
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($products as $product) { ?>
                     <tr>
                         <th scope="row"><?php echo $product->getId(); ?></th>
-                        <td colspan="2"><?php echo $product->getImageUrl(); ?></td>
+                        <td colspan="2"><img src="<?php echo $product->getImageUrl(); ?>" style="width: 10%;height: 10%" alt="Product Image"></td>
                         <td colspan="2"><?php echo $product->getName(); ?></td>
                         <td><?php echo $product->getPrice(); ?></td>
                         <td><?php echo $product->getStatus(); ?></td>
@@ -59,7 +61,7 @@
                             </div>
                             <div>
                                 <form action="" method="post">
-                                    <input name="id" type="text" hidden value="<?php echo $product['id']; ?>">
+                                    <input name="id" type="text" hidden value="<?php echo $product->getId(); ?>">
                                     <button class="btn btn-danger" onclick="(confirm('Bạn có chắc muốn xóa?'))">Xóa</button>
                                 </form>
                             </div>
