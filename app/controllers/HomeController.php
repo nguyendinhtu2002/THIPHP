@@ -9,4 +9,13 @@ class HomeController
         $products = ProductService::getALL();
         include(ROOT_PATH.'/views/index.php');
     }
+
+    public  function getDetails(){
+        $products = ProductService::getDetails();
+        include(ROOT_PATH.'/views/index.php');
+    }
+    public  function delete(){
+        $products = ProductService::deleteArticle();
+        include(ROOT_PATH.'/views/index.php');
+    }
 }
